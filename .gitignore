@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
+ENV/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# Project-specific
+checkpoint.pt
+anaconda_projects/
+.vscode/
+models/deepfake_model_final.pt
+
+# Large models/data
+models/*.pt
+*.pt
+datasets/
+
+# OS
+.DS_Store
+Thumbs.db
