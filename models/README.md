@@ -38,12 +38,8 @@ This project implements a high-performance deepfake detection system using the `
 
 ### 1. Clone the Project
 ```bash
-# Clone the repository
-git clone https://github.com/Skull-boy/Deepfake_realtime.git
-cd Deepfake_realtime
-
-# Switch to the feature branch
-git checkout feature-Deepfake_Model
+# Navigate to your project folder
+cd C:\Users\Downloads\deepfake_main
 ```
 
 ### 2. Create a Virtual Environment (Conda)
