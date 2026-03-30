@@ -20,17 +20,16 @@ router.post('/', upload.single('chunk'), async (req, res) => {
       return res.status(400).json({ error: 'No video chunk uploaded.' });
     }
 
-    // Convert req.file.buffer into a Blob (requires Node 18+)
-    const blob = new Blob([req.file.buffer], { type: req.file.mimetype || 'image/jpeg' });
+    // Convert buffer to base64 string
+    const base64Image = req.file.buffer.toString('base64');
 
-    // Create a FormData object and append the Blob
-    const formData = new FormData();
-    formData.append('chunk', blob, 'frame.jpg');
-
-    // Use native fetch to POST the FormData to AI server
+    // Use native fetch to POST the JSON payload to AI server
     const aiResponse = await fetch(`${aiNgrokUrl}/predict`, {
       method: 'POST',
-      body: formData,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ image_b64: base64Image }),
     });
 
     if (!aiResponse.ok) {
