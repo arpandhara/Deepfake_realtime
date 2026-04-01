@@ -5,7 +5,7 @@ import { gsap } from 'gsap';
 import {
   Shield, Camera, Activity, ShieldAlert,
   ChevronRight, BarChart3, Database,
-  User, CheckCircle2, Zap, ArrowUpRight, Layers
+  User, CheckCircle2, Zap, ArrowUpRight, Layers, Video
 } from 'lucide-react';
 
 /* ─────────────────────────────────────────────
@@ -429,7 +429,7 @@ export default function Dashboard() {
           </div>
 
           {/* ════ QUICK ACTIONS ROW ════ */}
-          <div ref={addToRefs} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12 }}>
+          <div ref={addToRefs} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr', gap: 12 }}>
             {[
               {
                 icon: Camera, label: 'Live Detection',
@@ -448,6 +448,12 @@ export default function Dashboard() {
                 desc: 'Check static images instantly',
                 action: () => navigate('/detector'),
                 accent: '#818cf8',
+              },
+              {
+                icon: Video, label: 'Live Interview',
+                desc: 'Detect deepfakes during live calls',
+                action: () => navigate('/live-call'),
+                accent: '#c084fc',  // purple-400 — distinct from other cards
               },
             // eslint-disable-next-line no-unused-vars
             ].map(({ icon: Icon, label, desc, action, accent }) => (

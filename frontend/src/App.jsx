@@ -4,6 +4,7 @@ import AuthPage from './pages/AuthPage';
 import Dashboard from './pages/Dashboard';
 import DetectorStudio from './pages/DetectorStudio';
 import LandingPage from './pages/LandingPage';
+import LiveCallDetector from './pages/LiveCallDetector';
 
 function App() {
   return (
@@ -57,6 +58,14 @@ function App() {
               <SignedOut>
                 <Navigate to="/sign-in" replace />
               </SignedOut>
+            </>
+          } />
+
+          {/* Live Call Detector Route — Phase 4 */}
+          <Route path="/live-call" element={
+            <>
+              <SignedIn><LiveCallDetector /></SignedIn>
+              <SignedOut><Navigate to="/sign-in" replace /></SignedOut>
             </>
           } />
         </Routes>
